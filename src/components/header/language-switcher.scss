@@ -1,0 +1,35 @@
+.language-switcher {
+
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 35px;
+    height: 20px;
+    z-index: 1;
+  }
+
+  &__item {
+    padding-left: 8px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  &__item:not(:first-child) {
+    padding: 10px;
+    background: #000;
+  }
+  
+  &:hover &__wrapper {
+    overflow: unset;
+  }
+}

@@ -1,0 +1,30 @@
+.top-main {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 57px;
+
+  position: absolute;
+  top: 0;
+  background: #333333;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    color: #fff;
+  }
+
+  &__wrapper img {
+    margin-right: 11px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 12px;
+  }
+
+  &__text {
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,44 @@
+.row-news {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  &__image {
+    width: 25%;
+  }
+
+  &__image img {
+    width: 100%;
+  }
+
+  &__text-wrapper {
+    width: 73%;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  &__text {
+    font-size: 20px;
+  }
+
+  &__button {
+    padding: 8px 70px;
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    background: #548EF3;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+}

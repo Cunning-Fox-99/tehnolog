@@ -1,0 +1,9 @@
+.main-page {
+  padding-top: 74px;
+  position: relative;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}

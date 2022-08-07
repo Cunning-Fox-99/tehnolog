@@ -1,31 +1,31 @@
-import React from "react";
+import React, {Component} from "react";
 import {Link} from "react-router-dom";
+import LanguageSwitcher from './language-switcher'
 
 import logo from './logo.jpg'
 import search from './search.svg'
 import cabinet from './cabinet.svg'
-// import map from './language-icon.svg'
 
 import './header.scss'
 
-let links = [
-    {status: true, text: 'Головна', link: '/'},
-    {status: false, text: 'Новини', link: '/news'},
-    {status: false, text: 'Гість номеру', link: '/guest'},
-    {status: false, text: 'Порада єксперта', link: '/advice'},
-    {status: false, text: 'ВШПМ', link: '/vshmp'},
-    {status: false, text: 'Оголошення', link: '/advert'},
-    {status: false, text: 'Архів', link: '/archive'},
-    {status: false, text: 'Контакти', link: '/contacts'}
-]
+export default class Header extends Component {
 
-function LanguageSwitcher() {
+    state = {
+        links : [
+            {status: true, text: 'Головна', link: '/'},
+            {status: false, text: 'Новини', link: '/news'},
+            {status: false, text: 'Гість номеру', link: '/guest'},
+            {status: false, text: 'Порада єксперта', link: '/advice'},
+            {status: false, text: 'ВШПМ', link: '/vshmp'},
+            {status: false, text: 'Оголошення', link: '/advert'},
+            {status: false, text: 'Архів', link: '/archive'},
+            {status: false, text: 'Контакти', link: '/contacts'}
+            ]
+    }
 
-}
+    render() {
 
-function Header () {
-
-   return <div className="header">
+    return <div className="header">
 
         <div className="header__logo">
             <img src={logo} alt=""/>
@@ -35,7 +35,7 @@ function Header () {
 
            <ul className="header__navigation">
 
-               {links.map((item, index) => {
+               {this.state.links.map((item, index) => {
                    return <li key={index} className={item.status === false ? "header__navigation-item" : "header__navigation-item active"}>
                        <Link to={item.link} >{item.text}</Link>
                    </li>
@@ -62,8 +62,8 @@ function Header () {
        </div>
 
     </div>
-}
 
-export default Header
+    }
+}
 
 
