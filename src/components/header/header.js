@@ -20,10 +20,19 @@ export default class Header extends Component {
             {status: false, text: 'Оголошення', link: '/advert'},
             {status: false, text: 'Архів', link: '/archive'},
             {status: false, text: 'Контакти', link: '/contacts'}
-            ]
+            ],
+        active: false
+    }
+
+    showMenu = () => {
+        this.setState((state) => {
+            return {active: !state.active}
+        })
     }
 
     render() {
+
+        const {active} = this.state
 
     return <div className="header">
 
@@ -33,31 +42,36 @@ export default class Header extends Component {
 
        <div className="header__body">
 
-           <ul className="header__navigation">
+           <div className="container">
+               <div className={active === false ? "mobile-button" : "mobile-button active"} onClick={this.showMenu}>
+                   <button className="mobile-button__button" />
+               </div>
+               <ul className={active === false ? "header__navigation" : "header__navigation active"}>
 
-               {this.state.links.map((item, index) => {
-                   return <li key={index} className={item.status === false ? "header__navigation-item" : "header__navigation-item active"}>
-                       <Link to={item.link} >{item.text}</Link>
+                   {this.state.links.map((item, index) => {
+                       return <li key={index} className={item.status === false ? "header__navigation-item" : "header__navigation-item active"}>
+                           <Link to={item.link} >{item.text}</Link>
+                       </li>
+                   })}
+
+                   <li className="header__navigation-item">
+                       <button className="header__button">
+                           <img src={search} alt=""/>
+                       </button>
                    </li>
-               })}
 
-               <li className="header__navigation-item">
-                  <button className="header__button">
-                      <img src={search} alt=""/>
-                  </button>
-               </li>
+                   <li className="header__navigation-item">
+                       <button className="header__button">
+                           <img src={cabinet} alt=""/>
+                       </button>
+                   </li>
 
-               <li className="header__navigation-item">
-                   <button className="header__button">
-                       <img src={cabinet} alt=""/>
-                   </button>
-               </li>
+                   <li className="header__navigation-item">
+                       <LanguageSwitcher />
+                   </li>
 
-               <li className="header__navigation-item">
-                    <LanguageSwitcher />
-               </li>
-
-           </ul>
+               </ul>
+           </div>
 
        </div>
 

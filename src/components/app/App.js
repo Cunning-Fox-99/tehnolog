@@ -4,6 +4,7 @@ import {Route, Routes} from "react-router-dom";
 import './App.css'
 import './misc.scss'
 import MainPage from "../pages/main-page/main-page";
+import Footer from "../footer/footer";
 
 function App()  {
     return <Fragment>
@@ -11,8 +12,9 @@ function App()  {
 
         <Routes>
             <Route path='/' index element={<MainPage />} />
-
         </Routes>
+
+        <Footer />
     </Fragment>
 }
 
