@@ -19,8 +19,8 @@ export default class ActionList extends Component {
         return <div className="action-list">
             <h2 className="action-list__title">Події</h2>
 
-            {this.state.actions.map((item) => {
-                return <div className='action-list__item'><span>{item.text}</span>
+            {this.state.actions.map((item, index) => {
+                return <div key={index} className='action-list__item'><span>{item.text}</span>
                 <button>Читати..</button>
                 </div>
             })}

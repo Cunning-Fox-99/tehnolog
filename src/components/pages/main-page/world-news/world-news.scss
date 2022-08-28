@@ -43,3 +43,43 @@
     background: #fff;
   }
 }
+
+@media (max-width: 990px) {
+
+  .world-news {
+
+    &__card-wrapper {
+      flex-wrap: wrap;
+    }
+
+    &__card {
+      margin-bottom: 15px;
+      width: 49%;
+    }
+  }
+}
+
+@media (max-width: 620px) {
+
+  .world-news {
+
+    &__title {
+      font-size: 28px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+
+  .world-news {
+
+    &__card {
+      height: auto;
+      width: 100%;
+    }
+
+    &__card img {
+      height: auto;
+    }
+  }
+}

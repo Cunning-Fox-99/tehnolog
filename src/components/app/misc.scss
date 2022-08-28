@@ -6,6 +6,19 @@
 
   &__title {
     margin-bottom: 31px;
+    font-weight: 600;
     font-size: 36px;
   }
 }
+
+@media (max-width: 475px) {
+
+  .advice {
+
+    &__title {
+      font-size: 28px;
+    }
+  }
+
+}
+

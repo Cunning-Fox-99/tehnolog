@@ -49,7 +49,7 @@ export default class Header extends Component {
                <ul className={active === false ? "header__navigation" : "header__navigation active"}>
 
                    {this.state.links.map((item, index) => {
-                       return <li key={index} className={item.status === false ? "header__navigation-item" : "header__navigation-item active"}>
+                       return <li key={index} onClick={this.showMenu} className={item.status === false ? "header__navigation-item" : "header__navigation-item active"}>
                            <Link to={item.link} >{item.text}</Link>
                        </li>
                    })}
@@ -61,9 +61,9 @@ export default class Header extends Component {
                    </li>
 
                    <li className="header__navigation-item">
-                       <button className="header__button">
+                       <Link to='/panel' className="header__button">
                            <img src={cabinet} alt=""/>
-                       </button>
+                       </Link>
                    </li>
 
                    <li className="header__navigation-item">
