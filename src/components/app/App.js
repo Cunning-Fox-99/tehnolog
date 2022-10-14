@@ -10,6 +10,8 @@ import Article from "../pages/article/article";
 import Contact from "../pages/contact/contact";
 import Error from "../pages/404/error";
 import Panel from "../pages/panel/panel";
+import Archive from "../pages/archive/archive";
+import Advert from "../pages/advert/advert";
 
 function App() {
     return <Fragment>
@@ -18,6 +20,8 @@ function App() {
             <Routes>
                 <Route path='/' index element={<MainPage/>}/>
                 <Route path='/news' index element={<NewsPage/>}/>
+                <Route path='/advert' index element={<Advert/>}/>
+                <Route path='/archive' index element={<Archive/>}/>
                 <Route path='/guest' index element={<Article/>}/>
                 <Route path='/advice' index element={<Article/>}/>
                 <Route path='/contacts' index element={<Contact/>}/>
